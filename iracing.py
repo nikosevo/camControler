@@ -15,7 +15,9 @@ class State:
 
     sor_drivers = ['Nikos Vrace',
                    'Ruben Vega',
-                   'Jesus J Bohorquez']
+                   'Jesus J Bohorquez',
+                   'Dylan McCarty'
+                   ]
 
     sor_drivers_car_nums = {
         "None" : 0
@@ -139,7 +141,7 @@ if __name__ == '__main__':
             # cause iracing updates data with 60 fps
             if keyboard.read_key() == "q":
                 ir.replay_set_play_speed(-1)
-                ir.cam_switch_num(car_number='64',group=i)
+                ir.cam_switch_num(car_number='64',group=1)
             if keyboard.read_key() == "w":
                 ir.replay_set_play_speed(0)
             if keyboard.read_key() == "e":
@@ -157,22 +159,24 @@ if __name__ == '__main__':
                 state.changeActiveDriver(2)
 
             
-            if keyboard.read_key() == "a":
-                ir.cam_switch_num(car_number=str(state.active_driver),group=1)
-            if keyboard.read_key() == "s":
-                ir.cam_switch_num(car_number=str(state.active_driver),group=2)
-            if keyboard.read_key() == "d":
-                ir.cam_switch_num(car_number=str(state.active_driver),group=3)
+            if keyboard.read_key() == "a":   #tv1
+                ir.cam_switch_num(car_number=str(state.active_driver),group=11)
+            if keyboard.read_key() == "s":  #tv3
+                ir.cam_switch_num(car_number=str(state.active_driver),group=13)
+            if keyboard.read_key() == "d":  #scenic
+                ir.cam_switch_num(car_number=str(state.active_driver),group=10)
             if keyboard.read_key() == "f":
-                ir.cam_switch_num(car_number=str(state.active_driver),group=4)            
-            if keyboard.read_key() == "z":
-                ir.cam_switch_num(car_number=str(state.active_driver),group=5)            
-            if keyboard.read_key() == "x":
-                ir.cam_switch_num(car_number=str(state.active_driver),group=6)            
-            if keyboard.read_key() == "c":
-                ir.cam_switch_num(car_number=str(state.active_driver),group=7)            
-            if keyboard.read_key() == "v":
-                ir.cam_switch_num(car_number=str(state.active_driver),group=8)
+                ir.cam_switch_num(car_number=str(state.active_driver),group=16)            
+            
+            
+            if keyboard.read_key() == "z": #choper
+                ir.cam_switch_num(car_number=str(state.active_driver),group=19)            
+            if keyboard.read_key() == "x": #rear chase
+                ir.cam_switch_num(car_number=str(state.active_driver),group=22)            
+            if keyboard.read_key() == "c": #rollbar
+                ir.cam_switch_num(car_number=str(state.active_driver),group=3)            
+            if keyboard.read_key() == "v": #gearbox
+                ir.cam_switch_num(car_number=str(state.active_driver),group=2)
 
 
             # ime.sleep(0.2)
